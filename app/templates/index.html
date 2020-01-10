@@ -1,0 +1,203 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="page-header">
+    <h5>Hello, {% if current_user.is_authenticated %}{{ current_user.username }}{% else %}Stranger{% endif %}!</h5>
+</div>
+<p> </p>
+<div class="container mt-4 mb-4">
+    <button type="button" class="btn btn-info mr-5">Shop Productivity</button>
+    <button type="button" class="btn btn-info mr-5">Shop Finance</button>
+    <button type="button" class="btn btn-info mr-5">Shop Business</button>
+    <button type="button" class="btn btn-info mr-5">Shop Personal Development</button>
+</div>
+<div class="container ml-auto">
+    <div class="row">
+        <div class="col-md-4">
+            <a href="#"> </a><img src={{ url_for('static', filename='decisive.jpeg') }} height="250"> </a>
+            <div class="col-md-3">
+            </div>
+            <h5 class="pb-5">Decisive</h5>
+            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+            <button type="button" class="btn btn-info mr-5 float-right">Learn More...</button>
+        </div>
+        <div class="col-md-4">
+            <a href="#"> </a><img src={{ url_for('static', filename='gtd.jpeg') }} height="250"> </a>
+            <h5 class="pb-5">Getting Things Done</h5>
+            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+            <button type="button" class="btn btn-info mr-5 float-right">Learn More...</button>
+        </div>
+        <div class="col-md-4">
+            <a href="#"> </a><img src={{ url_for('static', filename='friends.jpeg') }} height="250"> </a>
+            <h5 class="pt-auto pr-auto pl-auto pb-3">How to win friends and influence people</h5>
+            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+            <button type="button" class="btn btn-info mr-5 float-right">Learn More...</button>
+        </div>
+    </div>
+</div>
+<p></p>
+<div class="container bg-info mb-3">
+    <div class="row">
+        <div class="col-md-2">
+            <h3>Chip &amp; Dan Heath</h3>
+        </div>
+        <div class="col-md-2">
+            <img src="http://pinegrow.com/placeholders/img16.jpg" height="240" width="140">
+        </div>
+        <div class="col-md-2">
+            <img src="http://pinegrow.com/placeholders/img16.jpg" height="240" width="140">
+        </div>
+        <div class="col-md-2">
+            <img src="http://pinegrow.com/placeholders/img16.jpg" height="240" width="140">
+        </div>
+        <div class="col-md-2">
+            <img src="http://pinegrow.com/placeholders/img16.jpg" height="240" width="140">
+        </div>
+        <div class="col-md-2">
+            <img src="http://pinegrow.com/placeholders/img16.jpg" height="240" width="140">
+        </div>
+    </div>
+</div>
+<p></p>
+<div class="container bg-info mb-3">
+    <div class="row">
+        <div class="col-md-2">
+            <h3>Harvard Business Review</h3>
+        </div>
+        <div class="col-md-2">
+            <img src="http://pinegrow.com/placeholders/img16.jpg" height="240" width="140">
+        </div>
+        <div class="col-md-2">
+            <img src="http://pinegrow.com/placeholders/img16.jpg" height="240" width="140">
+        </div>
+        <div class="col-md-2">
+            <img src="http://pinegrow.com/placeholders/img16.jpg" height="240" width="140">
+        </div>
+        <div class="col-md-2">
+            <img src="http://pinegrow.com/placeholders/img16.jpg" height="240" width="140">
+        </div>
+        <div class="col-md-2">
+            <img src="http://pinegrow.com/placeholders/img16.jpg" height="240" width="140">
+        </div>
+    </div>
+</div>
+<p></p>
+<div class="container bg-info mb-3">
+    <div class="row">
+        <div class="col-md-2">
+            <h3>Dummies</h3>
+        </div>
+        <div class="col-md-2">
+            <img src="http://pinegrow.com/placeholders/img16.jpg" height="240" width="140">
+        </div>
+        <div class="col-md-2">
+            <img src="http://pinegrow.com/placeholders/img16.jpg" height="240" width="140">
+        </div>
+        <div class="col-md-2">
+            <img src="http://pinegrow.com/placeholders/img16.jpg" height="240" width="140">
+        </div>
+        <div class="col-md-2">
+            <img src="http://pinegrow.com/placeholders/img16.jpg" height="240" width="140">
+        </div>
+        <div class="col-md-2">
+            <img src="http://pinegrow.com/placeholders/img16.jpg" height="240" width="140">
+        </div>
+    </div>
+</div>
+<p></p>
+<div class="container bg-info mb-3">
+    <div class="row">
+        <div class="col-md-2">
+            <h3>Daniel Pinkman</h3>
+        </div>
+        <div class="col-md-2">
+            <img src="http://pinegrow.com/placeholders/img16.jpg" height="240" width="140">
+        </div>
+        <div class="col-md-2">
+            <img src="http://pinegrow.com/placeholders/img16.jpg" height="240" width="140">
+        </div>
+        <div class="col-md-2">
+            <img src="http://pinegrow.com/placeholders/img16.jpg" height="240" width="140">
+        </div>
+        <div class="col-md-2">
+            <img src="http://pinegrow.com/placeholders/img16.jpg" height="240" width="140">
+        </div>
+        <div class="col-md-2">
+            <img src="http://pinegrow.com/placeholders/img16.jpg" height="240" width="140">
+        </div>
+    </div>
+</div>
+<p></p>
+<div class="container mt-5">
+    <h2>Top Sellers...</h2>
+    <div class="row">
+        <div class="col-md-3">
+            <img src="http://pinegrow.com/placeholders/img16.jpg" height="230" width="230">
+        </div>
+        <div class="col-md-3">
+            <img src="http://pinegrow.com/placeholders/img16.jpg" height="230" width="230">
+        </div>
+        <div class="col-md-3">
+            <img src="http://pinegrow.com/placeholders/img16.jpg" height="230" width="230">
+        </div>
+        <div class="col-md-3">
+            <img src="http://pinegrow.com/placeholders/img16.jpg" height="230" width="230">
+        </div>
+    </div>
+</div>
+<p></p>
+<div class="container mt-5">
+    <h2>Recommendations for you...</h2>
+    <div class="row">
+        <div class="col-md-3">
+            <img src="http://pinegrow.com/placeholders/img16.jpg" height="230" width="230">
+        </div>
+        <div class="col-md-3">
+            <img src="http://pinegrow.com/placeholders/img16.jpg" height="230" width="230">
+        </div>
+        <div class="col-md-3">
+            <img src="http://pinegrow.com/placeholders/img16.jpg" height="230" width="230">
+        </div>
+        <div class="col-md-3">
+            <img src="http://pinegrow.com/placeholders/img16.jpg" height="230" width="230">
+        </div>
+    </div>
+</div>
+<p></p>
+<div class="container mt-5">
+    <h2>Latest Releases...</h2>
+    <div class="row">
+        <div class="col-md-3">
+            <img src="http://pinegrow.com/placeholders/img16.jpg" height="230" width="230">
+        </div>
+        <div class="col-md-3">
+            <img src="http://pinegrow.com/placeholders/img16.jpg" height="230" width="230">
+        </div>
+        <div class="col-md-3">
+            <img src="http://pinegrow.com/placeholders/img16.jpg" height="230" width="230">
+        </div>
+        <div class="col-md-3">
+            <img src="http://pinegrow.com/placeholders/img16.jpg" height="230" width="230">
+        </div>
+    </div>
+</div>
+<p></p>
+<div class="mb-5 container">
+    <div class="row mt-5 mb-5 text-md-center d-flex p-3">
+        <div class="col-md-4 border border-light border-top-0 border-bottom-0 bg-success">
+            <h3>See the latest books...</h3>
+            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+        </div>
+        <div class="col-md-4 border border-light border-top-0 border-bottom-0 bg-warning">
+            <h3>Want some gift ideas ?</h3>
+            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+        </div>
+        <div class="col-md-4 border border-light border-top-0 border-bottom-0 bg-danger">
+            <h3>Pre-order</h3>
+            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

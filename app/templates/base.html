@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UTA - Home Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link href="{{ url_for('static', filename='custom.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+
+</head>
+<body>
+    <div class="col text-center">
+    <span style="color:#00bdd6;font-size:24px">Confiata <img src={{ url_for('static', filename='dolphin.jpg') }} width="50" height="40"> </span>
+    </div>
+    {% if session['username'] %}
+    <span class="user">Welcome, {{ session['username'] }}</span>
+    {% endif %}
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+    <div class="alert alert-{{category}}">
+        <p>{{ message }}</p>
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#00bdd6;">
+        <a class="navbar-brand" href="#">Confiata</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Products<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Vouchers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Gift Ideas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Offers</a>
+                </li>
+                {% if current_user.is_authenticated %}
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ url_for('auth.change_password') }}">Change Password</a></li>
+                        <li><a href="{{ url_for('auth.change_email_request') }}">Change Email</a></li>
+                        <li><a href="{{ url_for('auth.logout') }}">Log Out</a></li>
+                    </ul>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link text-primary" href="{{ url_for('auth.login') }}">Log In</a>
+                </li>
+                {% endif %}
+            </ul>
+
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+            <i class="fas fa-shopping-cart fa-2x" style="color:white;padding-left:10px;"></i>
+        </div>
+    </nav>
+
+
+
+    <div class="container">
+
+
+        {% block content %}
+        {% endblock %}
+
+    </div>
+    <footer class="page-footer" style="background-color:black;color:ghostwhite">
+        <div class="row">
+            <div class="col-md-2 pl-3 ">
+                <p class="pl-3"> <small class="text-capitalize font-weight-bolder">Vouchers</small> </p>
+                <p> <small class="text-capitalize font-weight-bolder pl-3">Delivery</small> </p>
+                <p> <small class="text-capitalize font-weight-bolder pl-3">Returns</small> </p>
+            </div>
+            <div class="col-md-2">
+                <p class="pl-3"> <small class="text-white text-capitalize font-weight-bolder">Contact Us</small> </p>
+                <p> <small class="text-capitalize font-weight-bolder pl-3">Accessibility</small> </p>
+                <p> <small class="text-capitalize font-weight-bolder pl-3">Privacy Policy</small> </p>
+                <p> <small class="text-capitalize font-weight-bolder pl-3">Terms and Conditions</small> </p>
+            </div>
+            <div class="col-md-2">
+                <p> <small class="text-capitalize font-weight-bolder pl-3">Cookie Policy</small> </p>
+            </div>
+            <div class="col-md-2">
+                <p> <small class="text-capitalize font-weight-bolder pl-3">About Us</small> </p>
+            </div>
+            <div class="col-md-2">
+                <p> <small class="text-capitalize font-weight-bolder pl-3">Follow Us...</small> </p>
+                <div style="font-size: 24px;">
+                    <i class="fab fa-facebook-f text-white mr-1 pl-3"></i>
+                    <i class="fab fa-twitter-square text-white mr-1"></i>
+                    <i class="fab fa-instagram text-white"></i>
+                </div>
+            </div>
+            <div class="col-md-2">
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+
